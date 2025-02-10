@@ -8,7 +8,7 @@ variable "name" {
 
 variable "repository" {
   type        = string
-  default     = "https://github.com/slovink/terraform-aws-sqs"
+  default     = "https://github.com/cypik/terraform-aws-sqs"
   description = "Terraform current module repo"
 }
 
@@ -20,7 +20,7 @@ variable "environment" {
 
 variable "label_order" {
   type        = list(any)
-  default     = []
+  default     = ["name", "environment"]
   description = "Label order, e.g. `name`,`application`."
 }
 
@@ -30,11 +30,10 @@ variable "attributes" {
   description = "Additional attributes (e.g. `1`)."
 }
 
-
 variable "managedby" {
   type        = string
-  default     = "slovink"
-  description = "ManagedBy, eg 'slovink'."
+  default     = "cypik"
+  description = "ManagedBy, eg 'cypik'."
 }
 
 # Module      : SQS

@@ -1,13 +1,11 @@
 provider "aws" {
-  region = "eu-west-1"
+  region = "us-east-2"
 }
 
 data "aws_caller_identity" "current" {}
 
-
 module "sqs" {
-  source = "./../../"
-
+  source      = "./../../"
   name        = "sqs"
   environment = "test"
   label_order = ["name", "environment"]
@@ -32,7 +30,7 @@ data "aws_iam_policy_document" "document" {
     }
     actions = ["sqs:SendMessage"]
     resources = [
-      format("arn:aws:sqs:eu-west-1:%s:test-clouddrove-sqs", data.aws_caller_identity.current.account_id)
+      format("arn:aws:sqs:us-east-2:%s:test-cypik-sqs", data.aws_caller_identity.current.account_id)
     ]
   }
 }

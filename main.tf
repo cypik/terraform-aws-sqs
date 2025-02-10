@@ -1,13 +1,6 @@
-## Managed By : slovink
-## Description : This Script is used to create SQS resource on AWS for managing queue.
-
-
-#Module      : label
-#Description : This terraform module is designed to generate consistent label names and tags
-#              for resources. You can use terraform-labels to implement a strict naming
-#              convention.
 module "labels" {
-  source      = "git@github.com:slovink/terraform-aws-labels.git?ref=v1.0.0"
+  source      = "cypik/labels/aws"
+  version     = "1.0.1"
   name        = var.name
   repository  = var.repository
   environment = var.environment
@@ -16,8 +9,6 @@ module "labels" {
   label_order = var.label_order
 }
 
-# Module      : SQS
-# Description : Terraform module to create SQS resource on AWS for managing queue.
 #tfsec:ignore:aws-sqs-enable-queue-encryption
 resource "aws_sqs_queue" "default" {
   count = var.enabled ? 1 : 0
