@@ -90,7 +90,7 @@ variable "redrive_policy" {
 
 variable "fifo_queue" {
   type        = bool
-  default     = false
+  default     = true
   description = "Boolean designating a FIFO queue."
 }
 
@@ -118,3 +118,26 @@ variable "sqs_managed_sse_enabled" {
   default     = false
   description = "Boolean to enable server-side encryption (SSE) of message content with SQS-owned encryption keys."
 }
+
+variable "deduplication_scope" {
+  description = "Specifies whether message deduplication occurs at the message group or queue level."
+  type        = string
+  default     = "queue"
+}
+
+variable "fifo_throughput_limit" {
+  description = "Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group."
+  type        = string
+  default     = "perQueue"
+}
+
+variable "redrive_allow_policy" {
+  description = "JSON policy to set up the Dead Letter Queue redrive permission."
+  type        = string
+  default     = null
+}
+
+
+
+
+
