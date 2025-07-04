@@ -11,8 +11,7 @@ module "labels" {
 
 #tfsec:ignore:aws-sqs-enable-queue-encryption
 resource "aws_sqs_queue" "default" {
-  count = var.enabled ? 1 : 0
-
+  count                             = var.enabled ? 1 : 0
   name                              = var.fifo_queue ? format("%s.fifo", module.labels.id) : module.labels.id
   visibility_timeout_seconds        = var.visibility_timeout_seconds
   message_retention_seconds         = var.message_retention_seconds

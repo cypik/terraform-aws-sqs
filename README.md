@@ -22,7 +22,7 @@ To use this module, you can include it in your Terraform configuration. Here's a
 ```hcl
   module "sqs" {
   source                      = "cypik/sqs/aws"
-  version                     = "1.0.0"
+  version                     = "1.0.1"
   name                        = "sqs-fifo"
   environment                 = "test"
   label_order                 = ["name", "environment"]
@@ -37,7 +37,7 @@ To use this module, you can include it in your Terraform configuration. Here's a
 ```hcl
   module "sqs" {
   source                      = "cypik/sqs/aws"
-  version                     = "1.0.0"
+  version                     = "1.0.1"
   name                        = "sqs"
   environment                 = "test"
   label_order                 = ["name", "environment"]
@@ -65,15 +65,15 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.5 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >=5.67.0 |
-| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 4.0.6 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.12.1 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >=5.82.2 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >=4.1.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >=5.67.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >=5.82.2 |
 
 ## Modules
 
@@ -102,7 +102,7 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 | <a name="input_kms_data_key_reuse_period_seconds"></a> [kms\_data\_key\_reuse\_period\_seconds](#input\_kms\_data\_key\_reuse\_period\_seconds) | The length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling AWS KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). | `number` | `300` | no |
 | <a name="input_kms_master_key_id"></a> [kms\_master\_key\_id](#input\_kms\_master\_key\_id) | The ID of an AWS-managed customer master key (CMK) for Amazon SQS or a custom CMK. | `string` | `null` | no |
 | <a name="input_label_order"></a> [label\_order](#input\_label\_order) | Label order, e.g. `name`,`application`. | `list(any)` | <pre>[<br>  "name",<br>  "environment"<br>]</pre> | no |
-| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'cypik'. | `string` | `"cypik"` | no |
+| <a name="input_managedby"></a> [managedby](#input\_managedby) | ManagedBy, eg 'info@cypik.com' | `string` | `"info@cypik.com"` | no |
 | <a name="input_max_message_size"></a> [max\_message\_size](#input\_max\_message\_size) | The limit of how many bytes a message can contain before Amazon SQS rejects it. An integer from 1024 bytes (1 KiB) up to 262144 bytes (256 KiB). | `number` | `262144` | no |
 | <a name="input_message_retention_seconds"></a> [message\_retention\_seconds](#input\_message\_retention\_seconds) | The number of seconds Amazon SQS retains a message. Integer representing seconds, from 60 (1 minute) to 1209600 (14 days). | `number` | `345600` | no |
 | <a name="input_name"></a> [name](#input\_name) | Name  (e.g. `app` or `cluster`). | `string` | `""` | no |
