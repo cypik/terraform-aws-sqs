@@ -5,11 +5,10 @@ provider "aws" {
 data "aws_caller_identity" "current" {}
 
 module "sqs" {
-  source      = "./../../"
-  name        = "sqs"
-  environment = "test"
-  label_order = ["name", "environment"]
-
+  source                    = "./../../"
+  name                      = "sqs"
+  environment               = "test"
+  label_order               = ["name", "environment"]
   enabled                   = true
   delay_seconds             = 90
   max_message_size          = 2048
