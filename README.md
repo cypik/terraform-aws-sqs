@@ -22,7 +22,7 @@ To use this module, you can include it in your Terraform configuration. Here's a
 ```hcl
   module "sqs" {
   source                      = "cypik/sqs/aws"
-  version                     = "1.0.1"
+  version                     = "1.0.2"
   name                        = "sqs-fifo"
   environment                 = "test"
   label_order                 = ["name", "environment"]
@@ -37,7 +37,7 @@ To use this module, you can include it in your Terraform configuration. Here's a
 ```hcl
   module "sqs" {
   source                      = "cypik/sqs/aws"
-  version                     = "1.0.1"
+  version                     = "1.0.2"
   name                        = "sqs"
   environment                 = "test"
   label_order                 = ["name", "environment"]
@@ -65,21 +65,21 @@ This project is licensed under the **MIT** License - see the [LICENSE](https://g
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.12.1 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >=5.82.2 |
-| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >=4.1.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.15.8 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 6.58.0 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | >= 4.3.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >=5.82.2 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 6.58.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/aws | 1.0.1 |
+| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/aws | 1.0.4 |
 
 ## Resources
 
